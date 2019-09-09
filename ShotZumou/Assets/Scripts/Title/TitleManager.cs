@@ -5,49 +5,67 @@ using UnityEngine.SceneManagement;
 
 public class TitleManager : MonoBehaviour
 {
-    public static bool isAnyKeyDown;
+    public static bool isAnyKeyDown; // 最初のInput Any Key が押されたか否か
     public static bool mode; // true -> ゲームスタート : false -> チュートリアル
-    const int leftStickCoolTime = 10;
-    int coolTime;
+    const int CoolTime = 10; // モード選択時に次の入力受け付けるまでのクールタイム
+    int coolTimeForChoose;
+    bool isCircleKeyDown;
 
-    void Start()
+    void Awake()
     {
         isAnyKeyDown = false;
         mode = true;
-        coolTime = leftStickCoolTime;
+        coolTimeForChoose = CoolTime;
+        isCircleKeyDown = false;
     }
 
     void Update()
     {
-        if (Input.anyKeyDown)
-        {
-            isAnyKeyDown = true;
-        }
+        float circle = Input.GetAxisRaw("Circle");
 
+        // InputAnyKey用
         if (!isAnyKeyDown)
         {
+            if (Input.anyKeyDown)
+            {
+                if (circle == 1)
+                {
+                    isCircleKeyDown = true;
+                }
+                isAnyKeyDown = true;
+            }
             return;
         }
 
-        // ゲームスタートかチュートリアルの選択　---------- //
-        if (Input.GetAxis("Circle") == 1)
+        // InputAnyKeyのときに丸が押されたとき用にGetKeyDownと同じものをAxisに作った
+        if (circle == 1)
         {
-            LoadSelectedMode();
+            if (!isCircleKeyDown)
+            {
+                // ゲームスタートかチュートリアルの選択　---------- //
+                LoadSelectedMode();
+
+                isCircleKeyDown = true;
+            }
+        }
+        if (circle == 0)
+        {
+            isCircleKeyDown = false;
         }
 
         // チャタリング防止用
-        if (coolTime != 0)
+        if (coolTimeForChoose != 0)
         {
-            coolTime--;
+            coolTimeForChoose--;
             return;
         }
 
+        // モード選択
         float leftStick = Input.GetAxisRaw("Vertical");
         if (leftStick != 0)
         {
             mode = 0 < leftStick ? true : false;
-            coolTime = leftStickCoolTime;
-            Debug.Log(mode);
+            coolTimeForChoose = CoolTime;
         }
     }
 
