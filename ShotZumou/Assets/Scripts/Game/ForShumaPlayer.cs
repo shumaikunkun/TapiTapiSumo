@@ -14,9 +14,19 @@ public class ForShumaPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		//Debug.Log("update");
 
-		if (Input.GetKey(KeyCode.LeftArrow))
+        float leftX = Input.GetAxis("Horizontal");
+        //float leftY = Input.GetAxis("Vertical");
+
+        if (0 != leftX)
+        {
+            //Debug.Log("左スティックX: " + leftX);
+            transform.RotateAround(transform.position, Vector3.up, -speed* leftX);
+        }
+
+
+
+        if (Input.GetKey(KeyCode.LeftArrow))
 		{
 			// 処理
 			//Debug.Log("aaa");
