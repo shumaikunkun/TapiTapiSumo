@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ForShumaPlayer : MonoBehaviour
+public class ForShumaPlayerPosition : MonoBehaviour
 {
     public float speed=1.0f;
 
@@ -24,8 +24,6 @@ public class ForShumaPlayer : MonoBehaviour
             transform.RotateAround(transform.position, Vector3.up, -speed* leftX);
         }
 
-
-
         if (Input.GetKey(KeyCode.LeftArrow))
 		{
 			// 処理
@@ -40,6 +38,7 @@ public class ForShumaPlayer : MonoBehaviour
 			transform.RotateAround(transform.position, Vector3.up, -speed);
 		}
     }
-    
-
 }
+
+
+
