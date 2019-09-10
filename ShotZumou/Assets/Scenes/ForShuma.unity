@@ -494,9 +494,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   r2Fire: R2Fire
+  l2Fire: 
   bulletPrefab: {fileID: 1287523694043200844, guid: 8e7f95fd3192b4655aa79c5291bfb0f2,
     type: 3}
-  gunBarrelEnd: {fileID: 574811114}
+  superBulletPrefab: {fileID: 0}
+  gunBarrelEnd: {fileID: 0}
   interval: 8
 --- !u!81 &641377166
 AudioListener:
@@ -833,7 +835,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: c9db3958876609a45b72cc73189c3181, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.57
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: c9db3958876609a45b72cc73189c3181, type: 3}
       propertyPath: m_LocalRotation.x
@@ -986,7 +988,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1495852350}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.05, y: 0, z: 2.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 108319374}
