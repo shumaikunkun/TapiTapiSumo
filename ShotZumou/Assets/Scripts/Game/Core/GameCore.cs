@@ -17,6 +17,8 @@ public class GameCore : MonoBehaviour
     [SerializeField] GameObject minimapCamera;
     [SerializeField] GameObject[] playerCamera = new GameObject[2];
     [SerializeField] GameObject resultUI;
+    GameObject[] target = new GameObject[2];
+    GameResultCanvas resultCanvas;
 
     void Awake()
     {
@@ -25,6 +27,10 @@ public class GameCore : MonoBehaviour
 
         mode = true;
         coolTimeForChoose = CoolTime;
+
+        target[0] = GameObject.FindGameObjectWithTag("Object1");
+        target[1] = GameObject.FindGameObjectWithTag("Object2");
+        resultCanvas = GameObject.Find("Result").GetComponent<GameResultCanvas>();
     }
 
     void Start()
@@ -41,15 +47,25 @@ public class GameCore : MonoBehaviour
 
     void Update()
     {
-        // プレイヤーが落ちたかどうかの処理
-
-        // 勝敗決定後
-        if (Input.GetKeyDown(KeyCode.Space))
+        // 勝敗判定
+        float player1Y = target[0].transform.position.y;
+        float player2Y = target[1].transform.position.y;
+        if (player1Y < -1 || player2Y < -1)
         {
-            StopCoroutine("StartTimer");
-            GameEnd(1);
+            int winner = 0; // 0:引き分け 1:Player1の勝利 2:Player2の勝利
+            if (player1Y < -1 && -1 <= player2Y)
+            {
+                winner = 2;
+            }
+            else if (-1 <= player1Y && player2Y < -1)
+            {
+                winner = 1;
+            }
+
+            GameEnd(winner);
         }
 
+        // 終了したらの処理
         if (isEnd)
         {
             // ゲームスタートかチュートリアルの選択　---------- //
@@ -82,6 +98,7 @@ public class GameCore : MonoBehaviour
             camera.SetActive(false);
         }
         resultUI.SetActive(true);
+        resultCanvas.SetWinnerText(winner);
 
         isEnd = true;
     }
