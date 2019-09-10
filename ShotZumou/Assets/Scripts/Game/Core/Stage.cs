@@ -24,7 +24,8 @@ public class Stage : MonoBehaviour
             //Debug.Log(GameObject.FindWithTag("Player").transform.position.z);
             GameObject.FindWithTag("Player1").transform.position += new Vector3(0, 0, 0.005f);
             //GameObject.FindWithTag("Player2").transform.position -= new Vector3(0, 0, 0.005f);
-            //マルチプレイ時
+            //マルチプレイ時上のスクリプトをコメントアウト解除する
+
         //}
     }
 }
