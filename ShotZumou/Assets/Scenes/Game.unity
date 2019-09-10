@@ -165,7 +165,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   r2Fire: R2Fire2
+  l2Fire: L2Fire2
   bulletPrefab: {fileID: 1287523694043200844, guid: 8e7f95fd3192b4655aa79c5291bfb0f2,
+    type: 3}
+  superBulletPrefab: {fileID: 8522308893010694405, guid: f98e6e4c459784952b4f165eb0b29870,
     type: 3}
   gunBarrelEnd: {fileID: 1565465204}
   interval: 8
@@ -1511,7 +1514,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   r2Fire: R2Fire
+  l2Fire: L2Fire
   bulletPrefab: {fileID: 8363704952172041190, guid: e76442cd54d874eab8398e34fcf07603,
+    type: 3}
+  superBulletPrefab: {fileID: 5314842609186857607, guid: 7348c3742b82b46c8a9edbe25ee46394,
     type: 3}
   gunBarrelEnd: {fileID: 1505226445}
   interval: 8
