@@ -1,17 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameResultCanvas : MonoBehaviour
 {
     [SerializeField] RectTransform image_CursorPosition;
-    // Start is called before the first frame update
+    [SerializeField] Text winnerText;
+
     void Start()
     {
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (GameCore.isEnd)
@@ -24,6 +25,24 @@ public class GameResultCanvas : MonoBehaviour
             {
                 image_CursorPosition.anchoredPosition = new Vector3(0, -50, 0);
             }
+        }
+    }
+
+    public void SetWinnerText(int winner)
+    {
+        switch (winner)
+        {
+            case 0:
+                winnerText.text = "引き分け";
+                break;
+            case 1:
+                winnerText.text = "Player1の勝利";
+                break;
+            case 2:
+                winnerText.text = "Player2の勝利";
+                break;
+            default:
+                break;
         }
     }
 }
