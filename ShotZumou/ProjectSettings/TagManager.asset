@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Object1
   - Object2
+  - Bullet1
+  - Bullet2
   layers:
   - Default
   - TransparentFX
@@ -15,10 +17,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Object1
+  - Object2
+  - Bullet1
+  - Bullet2
   - 
   - 
   - 
