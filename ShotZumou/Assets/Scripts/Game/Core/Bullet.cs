@@ -30,7 +30,7 @@ public class Bullet : MonoBehaviour
 
         if (other.gameObject.tag == "Object1")
         {
-            other.gameObject.transform.localScale *= 1.05f;
+            other.gameObject.transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
         }
         
 
