@@ -14,8 +14,25 @@ public class Shooter : MonoBehaviour
     [SerializeField] int interval = 8; // 発射間隔
 
     //[SerializeField] ParticleSystem gunParticle;    // 発射時演出
-    //[SerializeField] AudioSource gunAudioSource;    // 発射音の音源
+
+    public AudioClip gunSound;
+    AudioSource gunAudioSource;    // タピオカの音源
+
+    public AudioClip bombSound;
+    AudioSource bombAudioSource;    // ゴールデンタピオカの音源
+
     private int timeCount = 1;
+
+    void Start()
+    {
+        gunAudioSource = gameObject.AddComponent<AudioSource>();
+        gunAudioSource.clip = gunSound;
+        bombAudioSource = gameObject.AddComponent<AudioSource>();
+        bombAudioSource.clip = bombSound;
+    }
+
+
+
 
     void Update()
     {
@@ -66,7 +83,7 @@ public class Shooter : MonoBehaviour
         //gunParticle.Play();
 
         // 発射時の音
-        //gunAudioSource.Play();
+        gunAudioSource.Play();
     }
     void SuperShoot()
     {
@@ -78,5 +95,6 @@ public class Shooter : MonoBehaviour
 
         // 発射時の音
         //gunAudioSource.Play();
+        bombAudioSource.Play();
     }
 }

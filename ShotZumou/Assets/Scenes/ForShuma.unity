@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 574811115}
   m_Layer: 0
   m_Name: PlayerBall
-  m_TagString: Player
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -519,6 +519,8 @@ MonoBehaviour:
     type: 3}
   gunBarrelEnd: {fileID: 574811114}
   interval: 8
+  gunSound: {fileID: 8300000, guid: bf6464d3011c64b83b8c2233d3659267, type: 3}
+  bombSound: {fileID: 8300000, guid: 2c3081a092ea044b7ab6a9c00282b645, type: 3}
 --- !u!81 &641377166
 AudioListener:
   m_ObjectHideFlags: 0
