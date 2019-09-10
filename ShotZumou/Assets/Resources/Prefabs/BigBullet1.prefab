@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3824648332155704729}
   - component: {fileID: 8774078436166992379}
   m_Layer: 10
-  m_Name: BigBullet
+  m_Name: BigBullet1
   m_TagString: Bullet2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0b1713b009c43435a8456a6f340a78b3, type: 2}
+  - {fileID: 2100000, guid: 06ee21c07902a47fb92f76dc2d84807d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
