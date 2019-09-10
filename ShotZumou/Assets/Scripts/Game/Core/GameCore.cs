@@ -14,7 +14,8 @@ public class GameCore : MonoBehaviour
     const int CoolTime = 10; // モード選択時に次の入力受け付けるまでのクールタイム
     int coolTimeForChoose;
 
-    [SerializeField] GameObject gameCamera;
+    [SerializeField] GameObject minimapCamera;
+    [SerializeField] GameObject[] playerCamera = new GameObject[2];
     [SerializeField] GameObject resultUI;
 
     void Awake()
@@ -28,7 +29,11 @@ public class GameCore : MonoBehaviour
 
     void Start()
     {
-        gameCamera.SetActive(true);
+        minimapCamera.SetActive(true);
+        foreach (var camera in playerCamera)
+        {
+            camera.SetActive(true);
+        }
         resultUI.SetActive(false);
 
         StartCoroutine("StartTimer");
@@ -71,7 +76,11 @@ public class GameCore : MonoBehaviour
 
     void GameEnd(int winner)
     {
-        gameCamera.SetActive(false);
+        minimapCamera.SetActive(false);
+        foreach (var camera in playerCamera)
+        {
+            camera.SetActive(false);
+        }
         resultUI.SetActive(true);
 
         isEnd = true;

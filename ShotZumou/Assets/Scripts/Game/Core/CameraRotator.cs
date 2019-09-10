@@ -7,7 +7,7 @@ public class CameraRotator : MonoBehaviour
     [SerializeField] float angularVelocity = 30f; // 回転速度の設定
 
     float horizontalAngle = 0f; // 水平方向の回転量を保存
-    float verticalAngle = 0f;   // 垂直方向の回転量を保存
+    float verticalAngle = 0f; // 垂直方向の回転量を保存
 
 #if UNITY_EDITOR
     void Update()
@@ -24,7 +24,7 @@ public class CameraRotator : MonoBehaviour
         verticalAngle = Mathf.Clamp(verticalAngle, -80f, 80f);
 
         // Transformコンポーネントに回転量を適用する
-        transform.rotation = Quaternion.Euler(verticalAngle, horizontalAngle, 0f);
+        transform.localRotation = Quaternion.Euler(verticalAngle, horizontalAngle, 0f);
     }
 #endif
 }
