@@ -39,9 +39,11 @@ public class GameResultCanvas : MonoBehaviour
                 break;
             case 1:
                 winnerText.text = "Win Player1 !";
+                winnerText.color = Color.green;
                 break;
             case 2:
                 winnerText.text = "Win Player2 !";
+                winnerText.color = Color.red;
                 break;
             default:
                 break;
