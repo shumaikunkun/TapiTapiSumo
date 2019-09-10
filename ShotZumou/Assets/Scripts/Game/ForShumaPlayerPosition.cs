@@ -15,29 +15,40 @@ public class ForShumaPlayerPosition : MonoBehaviour
     void Update()
     {
 
-        float leftX = Input.GetAxis("Horizontal");
-        //float leftY = Input.GetAxis("Vertical");
+        //float leftX = Input.GetAxis("Horizontal");
+        ////float leftY = Input.GetAxis("Vertical");
 
-        if (0 != leftX)
-        {
-            //Debug.Log("左スティックX: " + leftX);
-            transform.RotateAround(transform.position, Vector3.up, -speed* leftX);
-        }
+        //if (0 != leftX)
+        //{
+        //    //Debug.Log("左スティックX: " + leftX);
+        //    transform.RotateAround(transform.position, Vector3.up, -speed* leftX);
+        //}
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+
+
+        if (Input.GetKey(KeyCode.Z))
 		{
 			// 処理
 			//Debug.Log("aaa");
             transform.RotateAround(transform.position, Vector3.up, speed);
 		}
 
-		if (Input.GetKey(KeyCode.RightArrow))
+		if (Input.GetKey(KeyCode.X))
 		{
 			// 処理
 			//Debug.Log("bbb");
 			transform.RotateAround(transform.position, Vector3.up, -speed);
 		}
+
+
+
+
+
+
+
     }
+    
+
 }
 
 

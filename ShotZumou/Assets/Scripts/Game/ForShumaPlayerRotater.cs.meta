@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:ShotZumou/Assets/Scripts/Game/ForShumaPlayerRotater.cs.meta
 guid: 6c4257df81a184101b7db646b5f8e033
+=======
+guid: 770839ddb04d74d06a54f5645155fd85
+>>>>>>> d4f8c5c076d2077d4f736a72f6567d1d5d443bec:ShotZumou/Assets/Scripts/Title/TitleManager.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
