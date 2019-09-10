@@ -27,7 +27,12 @@ public class Bullet : MonoBehaviour
     {
         // 衝突対象に"OnHitBullet"メッセージ
         //other.SendMessage("OnHitBullet");
-        //Debug.Log("hit");
+
+        if (other.gameObject.tag == "Object1")
+        {
+            other.gameObject.transform.localScale *= 1.05f;
+        }
+        
 
         // 着弾地点に演出自動再生のゲームオブジェクトを生成
         Instantiate(bomb, transform.position, transform.rotation);
