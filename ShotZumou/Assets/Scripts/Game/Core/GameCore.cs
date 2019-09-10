@@ -100,6 +100,7 @@ public class GameCore : MonoBehaviour
     void GameEnd(int winner)
     {
         minimapCamera.SetActive(false);
+        onGameText.SetEnabled(false);
         foreach (var camera in playerCamera)
         {
             camera.SetActive(false);
