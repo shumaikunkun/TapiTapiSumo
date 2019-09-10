@@ -21,7 +21,8 @@ public class Shooter : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             timeCount += 1;
-            if (timeCount % interval == 0)
+            int v = timeCount % interval;
+            if (v == 0)
             {
                 Shoot();
             }
