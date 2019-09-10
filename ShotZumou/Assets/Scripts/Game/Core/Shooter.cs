@@ -19,6 +19,10 @@ public class Shooter : MonoBehaviour
 
     void Update()
     {
+        if (!GameCore.isStart)
+        {
+            return;
+        }
         // 入力に応じて押している間弾を発射する
         //発射間隔は変数で設定可能
         bool isR2Fire = Input.GetAxisRaw(r2Fire) == 1 ? true : false;

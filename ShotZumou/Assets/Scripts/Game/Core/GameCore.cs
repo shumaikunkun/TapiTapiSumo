@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class GameCore : MonoBehaviour
 {
+    public static bool isStart;
     public static bool isEnd;
     const int Time = 5;
-    public static float timer;
+    public static int timer;
 
     // 終了後の行動選択用変数
     public static bool mode; // true -> ゲームスタート : false -> チュートリアル
@@ -19,9 +20,12 @@ public class GameCore : MonoBehaviour
     [SerializeField] GameObject resultUI;
     GameObject[] target = new GameObject[2];
     GameResultCanvas resultCanvas;
+    CountDown countDown;
+    OnGameText onGameText;
 
     void Awake()
     {
+        isStart = false;
         isEnd = false;
         timer = Time;
 
@@ -31,6 +35,9 @@ public class GameCore : MonoBehaviour
         target[0] = GameObject.FindGameObjectWithTag("Object1");
         target[1] = GameObject.FindGameObjectWithTag("Object2");
         resultCanvas = GameObject.Find("Result").GetComponent<GameResultCanvas>();
+        countDown = GameObject.Find("CountDown").GetComponent<CountDown>();
+        onGameText = GameObject.Find("OnGame").GetComponent<OnGameText>();
+        onGameText.SetEnabled(false);
     }
 
     void Start()
@@ -117,15 +124,19 @@ public class GameCore : MonoBehaviour
 
     IEnumerator StartTimer()
     {
-        for (int i = 3; 0 <= i; i--)
+        for (int i = 3; 0 < i; i--)
         {
-            Debug.Log(i);
+            countDown.SetText(i);
             yield return new WaitForSeconds(1);
         }
 
+        countDown.SetEnabled(false);
+        isStart = true;
+        onGameText.SetEnabled(true);
+
         for (; 0 < timer; timer--)
         {
-            Debug.Log(timer);
+            onGameText.SetTimerText(timer);
             yield return new WaitForSeconds(1);
         }
 
@@ -134,7 +145,7 @@ public class GameCore : MonoBehaviour
 
     IEnumerator SuddenDeath()
     {
-        Debug.Log("サドンデスでーす");
+        onGameText.SetTimerText(-1);
         yield return new WaitForSeconds(1);
     }
 }
