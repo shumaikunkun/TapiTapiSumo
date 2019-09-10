@@ -19,13 +19,14 @@ public class Shooter : MonoBehaviour
 
     void Update()
     {
-        if (!GameCore.isStart)
-        {
-            return;
-        }
+        //if (!GameCore.isStart)
+        //{
+        //    return;
+        //}
         // 入力に応じて押している間弾を発射する
         //発射間隔は変数で設定可能
-        bool isR2Fire = Input.GetAxisRaw(r2Fire) == 1 ? true : false;
+        bool isR2Fire = Input.GetKey(KeyCode.Space);
+        //bool isR2Fire = Input.GetAxisRaw(r2Fire) == 1 ? true : false;
         if (isR2Fire)
         {
             timeCount += 1;
@@ -35,7 +36,9 @@ public class Shooter : MonoBehaviour
                 Shoot();
             }
         }
-        bool isL2Fire = Input.GetAxisRaw(l2Fire) == 1 ? true : false;
+
+        bool isL2Fire = Input.GetKey(KeyCode.B);
+        //bool isL2Fire = Input.GetAxisRaw(l2Fire) == 1 ? true : false;
         if (isL2Fire)
         {
             timeCount += 1;

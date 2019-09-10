@@ -494,11 +494,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   r2Fire: R2Fire
-  l2Fire: 
+  l2Fire: L2Fire
   bulletPrefab: {fileID: 1287523694043200844, guid: 8e7f95fd3192b4655aa79c5291bfb0f2,
     type: 3}
-  superBulletPrefab: {fileID: 0}
-  gunBarrelEnd: {fileID: 0}
+  superBulletPrefab: {fileID: 8522308893010694405, guid: f98e6e4c459784952b4f165eb0b29870,
+    type: 3}
+  gunBarrelEnd: {fileID: 574811114}
   interval: 8
 --- !u!81 &641377166
 AudioListener:
