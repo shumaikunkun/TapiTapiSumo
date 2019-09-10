@@ -17,14 +17,16 @@ public class GameResultCanvas : MonoBehaviour
     {
         if (GameCore.isEnd)
         {
+            Vector2 newPosition = image_CursorPosition.anchoredPosition;
             if (GameCore.mode)
             {
-                image_CursorPosition.anchoredPosition = new Vector3(0, 50, 0);
+                newPosition.y = 50;
             }
             else
             {
-                image_CursorPosition.anchoredPosition = new Vector3(0, -50, 0);
+                newPosition.y = -50;
             }
+            image_CursorPosition.anchoredPosition = newPosition;
         }
     }
 
@@ -33,13 +35,13 @@ public class GameResultCanvas : MonoBehaviour
         switch (winner)
         {
             case 0:
-                winnerText.text = "引き分け";
+                winnerText.text = "Draw ;)";
                 break;
             case 1:
-                winnerText.text = "Player1の勝利";
+                winnerText.text = "Win Player1 !";
                 break;
             case 2:
-                winnerText.text = "Player2の勝利";
+                winnerText.text = "Win Player2 !";
                 break;
             default:
                 break;
