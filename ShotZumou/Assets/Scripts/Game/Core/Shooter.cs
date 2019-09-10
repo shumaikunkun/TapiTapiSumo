@@ -5,8 +5,11 @@ using UnityEngine;
 public class Shooter : MonoBehaviour
 {
     [SerializeField] string r2Fire;
+    [SerializeField] string l2Fire;
 
     [SerializeField] GameObject bulletPrefab; // 弾のプレハブ
+    [SerializeField] GameObject superBulletPrefab; // 弾のプレハブ
+
     [SerializeField] Transform gunBarrelEnd; // 銃口(弾の発射位置)
     [SerializeField] int interval = 8; // 発射間隔
 
@@ -28,6 +31,16 @@ public class Shooter : MonoBehaviour
                 Shoot();
             }
         }
+        bool isL2Fire = Input.GetAxisRaw(l2Fire) == 1 ? true : false;
+        if (isL2Fire)
+        {
+            timeCount += 1;
+            int v = timeCount % interval;
+            if (v == 0)
+            {
+                SuperShoot();
+            }
+        }
     }
 
     void OnDisable()
@@ -41,6 +54,17 @@ public class Shooter : MonoBehaviour
     {
         // プレハブを元に、シーン上に弾を生成
         Instantiate(bulletPrefab, gunBarrelEnd.position, gunBarrelEnd.rotation);
+
+        // 発射時演出
+        //gunParticle.Play();
+
+        // 発射時の音
+        //gunAudioSource.Play();
+    }
+    void SuperShoot()
+    {
+        // プレハブを元に、シーン上に弾を生成
+        Instantiate(superBulletPrefab, gunBarrelEnd.position, gunBarrelEnd.rotation);
 
         // 発射時演出
         //gunParticle.Play();
