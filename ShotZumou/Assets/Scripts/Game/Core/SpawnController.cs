@@ -7,7 +7,7 @@ public class SpawnController : MonoBehaviour
     [SerializeField] float spawnInterval = 3f; // 敵出現間隔
 
     ItemSpawner[] spawners; // EnemySpawnerのリスト
-    float timer = 0f;        // 出現時間判定用のタイマー変数
+    float timer = 0f; // 出現時間判定用のタイマー変数
 
     // Use this for initialization
     void Start()
@@ -19,6 +19,11 @@ public class SpawnController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!GameCore.isStart || GameCore.isSudden || GameCore.isEnd)
+        {
+            return;
+        }
+
         // タイマー更新
         timer += Time.deltaTime;
 
@@ -32,5 +37,10 @@ public class SpawnController : MonoBehaviour
             // タイマーリセット
             timer = 0f;
         }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameCore : MonoBehaviour
 {
     public static bool isStart;
+    public static bool isSudden;
     public static bool isEnd;
     const int Time = 5;
     public static int timer;
@@ -26,6 +27,7 @@ public class GameCore : MonoBehaviour
     void Awake()
     {
         isStart = false;
+        isSudden = false;
         isEnd = false;
         timer = Time;
 
@@ -110,6 +112,7 @@ public class GameCore : MonoBehaviour
         resultUI.SetActive(true);
         resultCanvas.SetWinnerText(winner);
 
+        isSudden = false;
         isEnd = true;
     }
 
@@ -148,6 +151,7 @@ public class GameCore : MonoBehaviour
 
     IEnumerator SuddenDeath()
     {
+        isSudden = true;
         onGameText.SetTimerText(-1);
         yield return new WaitForSeconds(1);
     }

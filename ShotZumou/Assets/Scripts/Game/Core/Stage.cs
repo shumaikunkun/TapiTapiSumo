@@ -13,6 +13,10 @@ public class Stage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!GameCore.isSudden)
+        {
+            return;
+        }
 
         //if ("サドンデスタイム")
         //{
@@ -22,8 +26,8 @@ public class Stage : MonoBehaviour
         //時間とともにフィールドが縮小
 
         //Debug.Log(GameObject.FindWithTag("Player").transform.position.z);
-        GameObject.FindWithTag("Player1").transform.localPosition += new Vector3(0, 0, 0.005f);
-        GameObject.FindWithTag("Player2").transform.localPosition += new Vector3(0, 0, 0.005f);
+        // GameObject.FindWithTag("Player1").transform.localPosition += new Vector3(0, 0, 0.005f);
+        // GameObject.FindWithTag("Player2").transform.localPosition += new Vector3(0, 0, 0.005f);
         //マルチプレイ時上のスクリプトをコメントアウト解除する
 
         //}
