@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
         rigidbody.AddForce(velocity, ForceMode.VelocityChange);
     }
 
-    void OnCollisionStay(Collision other)
+    void OnCollisionEnter(Collision other)
     {
         //衝突対象に"OnHitBullet"メッセージ
         //other.SendMessage("OnHitBullet");

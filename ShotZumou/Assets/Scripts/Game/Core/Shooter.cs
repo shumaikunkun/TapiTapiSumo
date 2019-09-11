@@ -12,6 +12,7 @@ public class Shooter : MonoBehaviour
 
     [SerializeField] Transform gunBarrelEnd; // 銃口(弾の発射位置)
     [SerializeField] int interval = 8; // 発射間隔
+    [SerializeField] ParticleSystem splash;
 
     //[SerializeField] ParticleSystem gunParticle;    // 発射時演出
 
@@ -21,7 +22,8 @@ public class Shooter : MonoBehaviour
     public AudioClip bombSound;
     AudioSource bombAudioSource; // ゴールデンタピオカの音源
 
-    private int timeCount = 1;
+    private int l2TimeCount = 1;
+    private int r2TimeCount = 1;
 
     void Start()
     {
@@ -43,8 +45,8 @@ public class Shooter : MonoBehaviour
         bool isR2Fire = Input.GetAxisRaw(r2Fire) == 1 ? true : false;
         if (isR2Fire)
         {
-            timeCount += 1;
-            int v = timeCount % interval;
+            r2TimeCount += 1;
+            int v = r2TimeCount % interval;
             if (v == 0)
             {
                 Shoot();
@@ -55,8 +57,8 @@ public class Shooter : MonoBehaviour
         bool isL2Fire = Input.GetAxisRaw(l2Fire) == 1 ? true : false;
         if (isL2Fire)
         {
-            timeCount += 1;
-            int v = timeCount % interval;
+            l2TimeCount += 1;
+            int v = l2TimeCount % interval;
             if (v == 0)
             {
                 if (0 < GetComponent<TapiState>().goldTapi)
@@ -86,6 +88,8 @@ public class Shooter : MonoBehaviour
 
         // 発射時の音
         gunAudioSource.Play();
+
+        splash.Play();
     }
     void SuperShoot()
     {
@@ -98,5 +102,7 @@ public class Shooter : MonoBehaviour
         // 発射時の音
         //gunAudioSource.Play();
         bombAudioSource.Play();
+
+        splash.Play();
     }
 }
