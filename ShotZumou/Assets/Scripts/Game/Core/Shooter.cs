@@ -16,10 +16,10 @@ public class Shooter : MonoBehaviour
     //[SerializeField] ParticleSystem gunParticle;    // 発射時演出
 
     public AudioClip gunSound;
-    AudioSource gunAudioSource;    // タピオカの音源
+    AudioSource gunAudioSource; // タピオカの音源
 
     public AudioClip bombSound;
-    AudioSource bombAudioSource;    // ゴールデンタピオカの音源
+    AudioSource bombAudioSource; // ゴールデンタピオカの音源
 
     private int timeCount = 1;
 
@@ -30,9 +30,6 @@ public class Shooter : MonoBehaviour
         bombAudioSource = gameObject.AddComponent<AudioSource>();
         bombAudioSource.clip = bombSound;
     }
-
-
-
 
     void Update()
     {
