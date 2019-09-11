@@ -22,18 +22,18 @@ public class PlayerPosition : MonoBehaviour
             transform.RotateAround(transform.position, Vector3.up, -speed * leftX);
         }
 
-        // if (Input.GetKey(KeyCode.Z))
-        // {
-        //     // 処理
-        //     //Debug.Log("aaa");
-        //     transform.RotateAround(transform.position, Vector3.up, speed);
-        // }
+        //if (Input.GetKey(KeyCode.Z))
+        //{
+        //    // 処理
+        //    //Debug.Log("aaa");
+        //    transform.RotateAround(transform.position, Vector3.up, speed);
+        //}
 
-        // if (Input.GetKey(KeyCode.X))
-        // {
-        //     // 処理
-        //     //Debug.Log("bbb");
-        //     transform.RotateAround(transform.position, Vector3.up, -speed);
-        // }
+        //if (Input.GetKey(KeyCode.X))
+        //{
+        //    // 処理
+        //    //Debug.Log("bbb");
+        //    transform.RotateAround(transform.position, Vector3.up, -speed);
+        //}
     }
 }

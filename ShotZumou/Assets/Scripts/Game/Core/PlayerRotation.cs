@@ -17,6 +17,9 @@ public class PlayerRotation : MonoBehaviour
     void Update()
     {
         //// 入力による回転量を取得
+        //var horizontalRotation = Input.GetAxis("Horizontal")  * angularVelocity * Time.deltaTime;
+        //var verticalRotation = -Input.GetAxis("Vertical") * angularVelocity * Time.deltaTime;
+
         var horizontalRotation = Input.GetAxis(horizontalView) * angularVelocity * Time.deltaTime;
         var verticalRotation = -Input.GetAxis(verticalView) * angularVelocity * Time.deltaTime;
 
