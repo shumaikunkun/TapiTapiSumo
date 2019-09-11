@@ -38,9 +38,4 @@ public class SpawnController : MonoBehaviour
             timer = 0f;
         }
     }
-
-    void OnTriggerEnter(Collider other)
-    {
-
-    }
 }

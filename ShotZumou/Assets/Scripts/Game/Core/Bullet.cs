@@ -29,11 +29,11 @@ public class Bullet : MonoBehaviour
         //other.SendMessage("OnHitBullet");
         if (other.gameObject.tag == "Object1")
         {
-            other.gameObject.transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
+            other.gameObject.transform.localScale += Vector3.one * 0.025f;
         }
         if (other.gameObject.tag == "Object2")
         {
-            other.gameObject.transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
+            other.gameObject.transform.localScale += Vector3.one * 0.025f;
         }
 
         // 着弾地点に演出自動再生のゲームオブジェクトを生成

@@ -8,7 +8,7 @@ public class GameCore : MonoBehaviour
     public static bool isStart;
     public static bool isSudden;
     public static bool isEnd;
-    const int Time = 5;
+    const int Time = 15;
     public static int timer;
 
     // 終了後の行動選択用変数
