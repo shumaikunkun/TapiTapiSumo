@@ -25,9 +25,9 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionStay(Collision other)
     {
-        // 衝突対象に"OnHitBullet"メッセージ
+        //衝突対象に"OnHitBullet"メッセージ
         //other.SendMessage("OnHitBullet");
-        //Debug.Log("hit");
+        Debug.Log("hit");
 
         // 着弾地点に演出自動再生のゲームオブジェクトを生成
         Instantiate(bomb, transform.position, transform.rotation);

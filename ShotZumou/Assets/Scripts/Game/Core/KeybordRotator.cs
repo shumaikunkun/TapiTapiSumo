@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraRotator : MonoBehaviour
+public class KeybordRotator : MonoBehaviour
 {
     [SerializeField] float angularVelocity = 30f; // 回転速度の設定
 
