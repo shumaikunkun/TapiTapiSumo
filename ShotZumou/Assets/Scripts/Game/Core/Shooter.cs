@@ -59,7 +59,12 @@ public class Shooter : MonoBehaviour
             int v = timeCount % interval;
             if (v == 0)
             {
-                SuperShoot();
+                if (0 < GetComponent<TapiState>().goldTapi)
+                {
+                    GetComponent<TapiState>().goldTapi--;
+
+                    SuperShoot();
+                }
             }
         }
     }

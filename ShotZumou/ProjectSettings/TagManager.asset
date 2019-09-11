@@ -10,6 +10,8 @@ TagManager:
   - Bullet2
   - Player1
   - Player2
+  - TapiMany
+  - GoldTapi
   layers:
   - Default
   - TransparentFX

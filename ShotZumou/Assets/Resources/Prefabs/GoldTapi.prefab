@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 5314842609186857602}
   - component: {fileID: 5314842609186857605}
   - component: {fileID: 5314842609186857604}
+  - component: {fileID: -3631859385439391296}
   m_Layer: 10
   m_Name: GoldTapi
-  m_TagString: Bullet2
+  m_TagString: GoldTapi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,3 +93,15 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-3631859385439391296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5314842609186857607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8d27eea79f694270b2f1ed20387b125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

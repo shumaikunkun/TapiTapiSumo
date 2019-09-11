@@ -693,6 +693,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33098d6ac51e34bc18c8b73b7f86b39a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tapiStates:
+  - {fileID: 1205084605}
+  - {fileID: 1517469177}
+  goldText:
+  - {fileID: 755629517}
+  - {fileID: 1913909187}
 --- !u!1 &313747324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1041,7 +1047,7 @@ GameObject:
   - component: {fileID: 755629518}
   - component: {fileID: 755629517}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2306,8 +2312,9 @@ GameObject:
   - component: {fileID: 1205084604}
   - component: {fileID: 1205084603}
   - component: {fileID: 1205084602}
+  - component: {fileID: 1205084605}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: Camera1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2400,6 +2407,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1205084605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205084600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d92ae3c794f8432fb8a764d1c81b2e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldTapi: 5
 --- !u!1 &1221242784
 GameObject:
   m_ObjectHideFlags: 0
@@ -2646,8 +2666,9 @@ GameObject:
   - component: {fileID: 1517469176}
   - component: {fileID: 1517469175}
   - component: {fileID: 1517469174}
+  - component: {fileID: 1517469177}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: Camera2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2740,6 +2761,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1517469177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517469172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d92ae3c794f8432fb8a764d1c81b2e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldTapi: 5
 --- !u!1 &1534998958
 GameObject:
   m_ObjectHideFlags: 0
@@ -3559,7 +3593,7 @@ GameObject:
   - component: {fileID: 1913909188}
   - component: {fileID: 1913909187}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
