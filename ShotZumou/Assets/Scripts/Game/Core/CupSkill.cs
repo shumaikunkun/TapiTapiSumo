@@ -9,6 +9,7 @@ public class CupSkill : MonoBehaviour
     [SerializeField] string circle;
     [SerializeField] float canUseSkillSize = 3;
     [SerializeField] float useTapiAmount = 1.5f;
+    GameObject canBombEffect;
     GameObject tapiBomber;
 
     // Start is called before the first frame update
@@ -16,7 +17,10 @@ public class CupSkill : MonoBehaviour
     {
         isCircleKeyDown = false;
 
+        canBombEffect = transform.Find("CanBombEffect").gameObject;
         tapiBomber = transform.Find("TapiBomber").gameObject;
+
+        canBombEffect.SetActive(false);
     }
 
     // Update is called once per frame
@@ -27,13 +31,16 @@ public class CupSkill : MonoBehaviour
         //     return;
         // }
 
+        float scale = transform.localScale.x;
+        Vector3 forEffectVector3 = new Vector3(scale - 1f, scale - 1f, scale - 1f);
+        canBombEffect.transform.localScale = forEffectVector3;
         bool isOnCircle = Input.GetAxisRaw(circle) == 1 ? true : false;
-        if (isOnCircle)
+        if (canUseSkillSize <= scale)
         {
-            if (!isCircleKeyDown)
+            canBombEffect.SetActive(true);
+            if (isOnCircle)
             {
-                float scale = transform.localScale.x;
-                if (canUseSkillSize <= scale)
+                if (!isCircleKeyDown)
                 {
                     transform.localScale -= Vector3.one * useTapiAmount;
                     tapiBomber.GetComponent<ParticleSystem>().Play();
@@ -41,6 +48,10 @@ public class CupSkill : MonoBehaviour
 
                 isCircleKeyDown = true;
             }
+        }
+        else
+        {
+            canBombEffect.SetActive(false);
         }
         if (!isOnCircle)
         {
