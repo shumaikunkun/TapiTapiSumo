@@ -1837,7 +1837,7 @@ MonoBehaviour:
   superBulletPrefab: {fileID: 5314842609186857607, guid: 7348c3742b82b46c8a9edbe25ee46394,
     type: 3}
   gunBarrelEnd: {fileID: 1574400129}
-  interval: 8
+  interval: 6
 --- !u!114 &906416091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2067,7 +2067,7 @@ PrefabInstance:
     - target: {fileID: 6781508165983161021, guid: 66e39e01dbdf7439a9281f1fc1e121a2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.08
+      value: -1.35
       objectReference: {fileID: 0}
     - target: {fileID: 6781508165983161021, guid: 66e39e01dbdf7439a9281f1fc1e121a2,
         type: 3}
@@ -2077,7 +2077,7 @@ PrefabInstance:
     - target: {fileID: 6781508165983161021, guid: 66e39e01dbdf7439a9281f1fc1e121a2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.75
+      value: -6.98
       objectReference: {fileID: 0}
     - target: {fileID: 6781508165983161021, guid: 66e39e01dbdf7439a9281f1fc1e121a2,
         type: 3}
