@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5314842609186857605}
   - component: {fileID: 5314842609186857604}
   - component: {fileID: -3631859385439391296}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: GoldTapi
   m_TagString: GoldTapi
   m_Icon: {fileID: 0}
